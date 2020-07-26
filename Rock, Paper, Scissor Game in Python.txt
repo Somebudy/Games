@@ -1,0 +1,47 @@
+import random
+again=''
+computerwins=0
+userwins=0
+tied=0
+randomchoice=random.choice(["Rock","Paper","Scissor"])
+choice=input("Do you want to play Rock, Paper, Scissor?(Y/N)\n")
+if choice=="N" or choice=="n":
+    print("Ok, No problem..... Have a nice day :)\n")
+
+if choice=="Y" or choice=="y":
+    name=input("Enter your name\n")
+
+    while again!="1" or again!="1":
+        select = input("{0}, Make your selection(Rock, Paper, Scissor)\n".format(name))
+        print("Computer choose {0}\n".format(randomchoice))
+
+        if select == randomchoice:
+            print("Game Tied\n")
+            tied=tied+1
+            again = input("You wanna try again?\nPress 1 to exit, Press 2 to continue\n")
+
+
+        if select!=randomchoice:
+            if select=="Rock" and randomchoice=="Paper":
+                print("Computer Wins")
+                computerwins=computerwins+1
+            if select=="Paper" and randomchoice=="Scissor":
+                print("Computer winds")
+                computerwins=computerwins+1
+            if select=="Scissor" and randomchoice=="Rock":
+                print("Computer wins")
+                computerwins=computerwins+1
+            if select=="Rock" and randomchoice=="Scissor":
+                print("User wins")
+                userwins=userwins+1
+            if select=="Paper" and randomchoice=="Rock":
+                print("User wins")
+                userwins=userwins+1
+            if select=="Scissor" and randomchoice=="Paper":
+                print("User wins")
+                userwins=userwins+1
+            again=input("You wanna try again?\nPress 1 to exit, Press 2 to continue\n")
+else:
+    print("Invalid Selection\n")
+print("You Won {0} Games\nComputer won {1} Games\nTied Games={2}".format(userwins,computerwins,tied))
+print("Game Exited\n")

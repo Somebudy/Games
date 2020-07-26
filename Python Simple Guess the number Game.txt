@@ -1,0 +1,58 @@
+import random
+number=random.randint(1,20)
+tries=0
+username=input(('Hey, Enter your username\n'))
+print('Hey ',username,' would you like to play a game?\n')
+choice= input(("Enter Y or N\n"))
+if choice=="n " or choice=="N":
+    print("OK.... No Problem ;)")
+
+if choice=="y" or choice=="Y":
+    print("Let's Start....\n Think of a Number")
+    usernumber=int(input())
+    if usernumber > number:
+        print("Think Lower")
+        print("Hint:The Number is Close to  ",number+3)
+
+    if usernumber<number:
+        print("Think Higher")
+        print("Hint:The Number is Close to  ", number + 3)
+    if usernumber==number:
+            print("This is the correct answer")
+    while usernumber != number:
+        tries=tries+1
+        usernumber=int(input("Try Again "))
+        if usernumber==number:
+            print("You're Right :)")
+print("You Guessed the right number in ",tries," Tries")
+print("Thanks For Playing game ")
+
+\\\\\\\\\\\\\\ Another Method //////////////////
+
+import random
+choice=''
+tries=1
+randomnumber= random.randint(1,20)
+play=input("Do you want to play a game of guess the number?(Y/N)\n")
+if play=="N" or play=="n":
+    print("Ok, No problme. Have a nice day...... :)\n")
+if play=="Y" or play=="y":
+    name=input("Please Enter username\n")
+    number=int(input("{0}, Choose number between 1-20\n".format(name)))
+    while randomnumber!=number:
+        if randomnumber==number:
+            print("Your answer is correct\nYou guessed the answer in {0} tries".format(tries))
+
+        if randomnumber!=number:
+            hint=int(input("Your answer is incorrect\n Press 1 for hint\n Press 2 to continue \n"))
+            if hint==1:
+                print("Hint: Your answer is close to {0}".format(randomnumber + 1))
+                number = int(input("Enter number\n"))
+                tries = tries + 1
+            else:
+                number = int(input("Enter number\n"))
+                tries = tries + 1
+
+    print("You completed the game in {0} tries \n".format(tries))
+
+print("Game Exited\n")
